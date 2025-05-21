@@ -1,0 +1,40 @@
+/* @tailwind base;
+@tailwind components;
+a
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.news-feed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.news-article {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.news-article h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.news-article p {
+    color: #4a5568;
+}
+
+.news-article a {
+    color: #3182ce;
+    text-decoration: none;
+}
+
+.news-article a:hover {
+    text-decoration: underline;
+} */
