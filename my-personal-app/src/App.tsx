@@ -11,6 +11,8 @@ import Navbar from './components/navbar'
 import PreviousWorksSection from './components/previousWorks'
 import ServicesSection from './components/service'
 import ContactUs from './components/contactus'
+import TestimonialsSection from './components/testimonial'
+import Testimonials from './components/testimonial'
 function App() {
 
   return (
@@ -24,7 +26,7 @@ function App() {
             <CompaniesWeWorkWith/>
 
       <AboutPage/>
-      
+      <Testimonials/>
       {/* <ErrorBoundary>
             <NewsFeed />
         </ErrorBoundary> */}

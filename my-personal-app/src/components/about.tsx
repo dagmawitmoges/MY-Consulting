@@ -1,37 +1,87 @@
-import React from 'react';
-import image from '../assets/image.png'
-const AboutPage = () => {
+import React from "react";
+import img1 from "../assets/management.jpg";
+import img2 from "../assets/consultancy.png";  
+import img3 from "../assets/supervision.jpg";
+import img4 from "../assets/1000_F_333094597_8WdnUbpBaNg0HPLlXe9BFVhQzAnQPV6O.jpg";
+const AboutUs: React.FC = () => {
   return (
-    <div 
-      className="min-h-screen bg-cover bg-center" 
-      style={{ backgroundImage: image }} // Ensure the path is correct
-    >
-      <div className="max-w-7xl mx-auto p-8 bg-white bg-opacity-90 rounded-lg shadow-lg">
-        <h1 className="text-4xl font-bold text-center mb-6 text-gray-800">
-          We Are Your Connection with the Creative Underworld
-        </h1>
-        <div className="flex flex-col md:flex-row items-center">
-          <div className="md:w-1/2 mb-6 md:mb-0">
-            <img 
-              src={image}
-              alt="Yemane Addis" 
-              className="rounded-full w-48 h-48 object-cover mx-auto shadow-md" 
-            />
-          </div>
-          <div className="md:w-1/2 md:pl-6">
-            <h2 className="text-2xl font-semibold mb-2">Yemane Addis</h2>
-            <h3 className="text-lg text-gray-600 mb-4">Civil Engineer</h3>
-            <p className="text-gray-800 mb-4">
-              Yemane has worked on various infrastructure projects, contributing his expertise to both large-scale and community-focused initiatives. He graduated from a renowned university with a degree in civil engineering and has since become a key player in the field. His dedication to sustainable design is matched by a commitment to quality and safety.
-            </p>
-            <p className="text-gray-800">
-              Yemane believes that a solid foundation of experience guides his innovative approach to engineering challenges.
+    <section className="bg-white px-6 md:px-20 py-16 text-black">
+      {/* Header */}
+      <div className="mb-10">
+        <h1 className="text-[64px] font-extrabold leading-none">ABOUT</h1>
+        <h1 className="text-[64px] font-extrabold leading-none">US</h1>
+        <p className="mt-4 max-w-lg text-gray-600">
+          Luxurious Interior and Industrial Design
+        </p>
+        <p className="text-gray-500 text-sm mt-2">
+          Modern Elegance: Designs featuring clean lines, neutral palettes, and
+          high-quality materials.
+        </p>
+      </div>
+
+      {/* Image and Philosophy */}
+      <div className="grid md:grid-cols-2 gap-6 items-start mb-20">
+        <img
+          src={img1}
+          alt="Interior Left"
+          className="rounded-2xl object-cover w-full h-60"
+        />
+        <div className="space-y-4">
+          <img
+            src={img4}
+            alt="Interior Right"
+            className="rounded-2xl object-cover w-full h-60 mb-4"
+          />
+          <div className="space-y-2">
+            <h2 className="text-xl font-bold">Our Philosophy</h2>
+            <p className="text-gray-600">
+              At Britto Charette, we believe in creating luxurious, personalized
+              environments that reflect our clients’ tastes and lifestyles.
             </p>
           </div>
         </div>
       </div>
-    </div>
+
+      {/* Meet the Principals */}
+      <div className="mb-10">
+        <h2 className="text-3xl font-bold mb-6">MEET THE PRINCIPALS</h2>
+        <p className="text-gray-600 max-w-2xl mb-10">
+          As principal and licensed designer, the founder oversees the
+          day-to-day operations of Britto Charette and the design and
+          manufacture of our firm’s custom furniture and award-winning
+          accessories.
+        </p>
+
+        <div className="grid md:grid-cols-2 gap-10">
+          {/* Principal 1 */}
+          <div className="flex flex-col items-center text-center space-y-4">
+            <img
+              src={img2}
+              alt="Jay Britto"
+              className="rounded-2xl w-40 h-40 object-cover"
+            />
+            <div>
+              <h3 className="text-xl font-semibold">Jay Britto</h3>
+              <p className="text-sm text-gray-500">FOUNDER AND PRINCIPAL</p>
+            </div>
+          </div>
+
+          {/* Principal 2 */}
+          <div className="flex flex-col items-center text-center space-y-4">
+            <img
+              src={img3}
+              alt="David Charette"
+              className="rounded-2xl w-40 h-40 object-cover"
+            />
+            <div>
+              <h3 className="text-xl font-semibold">David Charette</h3>
+              <p className="text-sm text-gray-500">FOUNDER AND PRINCIPAL</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 
-export default AboutPage;
+export default AboutUs;

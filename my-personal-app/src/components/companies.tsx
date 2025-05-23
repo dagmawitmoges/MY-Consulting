@@ -25,21 +25,26 @@ const CompaniesWeWorkWith: React.FC = () => {
     ];
 
     return (
-        <div className="container mx-auto p-4 mt-19">
-            <h1 className="text-5xl font-bold text-center mb-6">Our Trusted Partners</h1>
-            <div className="flex flex-wrap justify-center">
-                {companies.map((company, index) => (
-                    <div key={company.name} className="flex justify-center items-center w-full md:w-1/3 lg:w-1/4 p-4">
-                        <div 
-                            className={`bg-white rounded-lg shadow-xl p-4 transition-transform transform ${index % 2 === 0 ? 'animate-slide-left' : 'animate-slide-right'} w-full`}
-                        >
-                            <img src={company.logo} alt={company.name} className="h-32 w-auto mx-auto" />
-                        </div>
-                    </div>
-                ))}
-            </div>
+        <><div className="flex items-center justify-center my-10 bg-gray-100 p-4">
+            <hr className="flex-grow border-t border-gray-300" />
+          
+                            <h1 className="text-5xl font-bold text-center mb-6">Our Trusted <span className="text-blue-600">Partners.</span></h1>
 
-            <style>{`
+            <hr className="flex-grow border-t border-gray-300" />
+        </div><div className="container mx-auto p-4 mt-19">
+                <div className="flex flex-wrap justify-center">
+                    {companies.map((company, index) => (
+                        <div key={company.name} className="flex justify-center items-center w-full md:w-1/3 lg:w-1/4 p-4">
+                            <div
+                                className={`bg-white rounded-lg shadow-xl p-4 transition-transform transform ${index % 2 === 0 ? 'animate-slide-left' : 'animate-slide-right'} w-full`}
+                            >
+                                <img src={company.logo} alt={company.name} className="h-32 w-auto mx-auto" />
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                <style>{`
                 @keyframes slide-left {
                     0% {
                         transform: translateX(-100%);
@@ -70,7 +75,7 @@ const CompaniesWeWorkWith: React.FC = () => {
                     animation: slide-right 0.5s ease forwards;
                 }
             `}</style>
-        </div>
+            </div></>
     );
 };
 

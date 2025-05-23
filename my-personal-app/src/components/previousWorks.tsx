@@ -25,16 +25,6 @@ const previousWorks = [
     description: 'Engineered a complex bridge design that enhances connectivity while ensuring safety and durability.',
     image: p2,
   },
-  {
-    title: 'Church Engineering Project',
-    description: 'Engineered a complex bridge design that enhances connectivity while ensuring safety and durability.',
-    image: p2,
-  },
-  {
-    title: 'Residential Development',
-    description: 'Oversaw the planning and design of a modern residential community with eco-friendly features.',
-    image: p4,
-  },
 ];
 
 const PreviousWorksSection = () => {
@@ -50,15 +40,15 @@ const PreviousWorksSection = () => {
   }, []);
 
   return (
-    <><div className="flex items-center justify-center my-10 bg-gray-100 p-4">
-      <hr className="flex-grow border-t border-gray-300" />
-      <h2 className="mx-4 text-3xl font-bold text-center text-gray-800">
-        OUR PREVIOUS  <span className="text-blue-600">WORKS.</span>
-      </h2>
-      <hr className="flex-grow border-t border-gray-300" />
-    </div>
-    <div className="max-w-7xl mx-auto p-6">
-
+    <>
+      <div className="flex items-center justify-center my-10 bg-blue-100 p-4">
+        <hr className="flex-grow border-t border-blue-300" />
+        <h2 className="mx-4 text-3xl font-bold text-center text-gray-800">
+          OUR PREVIOUS <span className="text-blue-600">WORKS.</span>
+        </h2>
+        <hr className="flex-grow border-t border-blue-300" />
+      </div>
+      <div className="max-w-7xl mx-auto p-6">
         <div className="overflow-hidden">
           <div
             className="flex transition-transform duration-500 ease-in-out"
@@ -66,9 +56,9 @@ const PreviousWorksSection = () => {
           >
             {previousWorks.map((work, index) => (
               <div key={index} className="flex-none w-1/3 p-2">
-                <div className="bg-white rounded-lg shadow-md overflow-hidden">
+                <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
                   <img src={work.image} alt={work.title} className="w-full h-48 object-cover" />
-                  <div className="p-4">
+                  <div className="p-4 text-center">
                     <h3 className="text-xl font-semibold">{work.title}</h3>
                     <p className="mt-2 text-gray-600">{work.description}</p>
                   </div>
@@ -77,7 +67,8 @@ const PreviousWorksSection = () => {
             ))}
           </div>
         </div>
-      </div></>
+      </div>
+    </>
   );
 };
 
