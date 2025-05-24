@@ -20,12 +20,13 @@ function App() {
      
       <Navbar/>
       <LandingSection/>
+      <PreviousWorksSection/>
 
       <ServicesSection/>
-      <PreviousWorksSection/>
+            <AboutPage/>
+
             <CompaniesWeWorkWith/>
 
-      <AboutPage/>
       <Testimonials/>
       {/* <ErrorBoundary>
             <NewsFeed />

@@ -1,7 +1,7 @@
 import React from "react";
 import img1 from "../assets/management.jpg";
-import img2 from "../assets/consultancy.png";  
-import img3 from "../assets/supervision.jpg";
+import img2 from "../assets/download.jpg";  
+import img3 from "../assets/download (1).png";
 import img4 from "../assets/1000_F_333094597_8WdnUbpBaNg0HPLlXe9BFVhQzAnQPV6O.jpg";
 const AboutUs: React.FC = () => {
   return (
@@ -61,7 +61,7 @@ const AboutUs: React.FC = () => {
               className="rounded-2xl w-40 h-40 object-cover"
             />
             <div>
-              <h3 className="text-xl font-semibold">Jay Britto</h3>
+              <h3 className="text-xl font-semibold">Yemane Addis</h3>
               <p className="text-sm text-gray-500">FOUNDER AND PRINCIPAL</p>
             </div>
           </div>
@@ -74,7 +74,7 @@ const AboutUs: React.FC = () => {
               className="rounded-2xl w-40 h-40 object-cover"
             />
             <div>
-              <h3 className="text-xl font-semibold">David Charette</h3>
+              <h3 className="text-xl font-semibold">Mesheg</h3>
               <p className="text-sm text-gray-500">FOUNDER AND PRINCIPAL</p>
             </div>
           </div>

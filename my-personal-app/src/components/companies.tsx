@@ -1,82 +1,58 @@
-import React from 'react';
-import c1 from '../assets/image-removebg-preview (43).png';
-import c2 from '../assets/image-removebg-preview (44).png';
-import c3 from '../assets/image-removebg-preview (42).png';
-import c4 from '../assets/image-removebg-preview (41).png';
+import React from "react";
+import img1 from "../assets/image-removebg-preview (41).png";
+import img2 from "../assets/image-removebg-preview (41).png";
+import img3 from "../assets/image-removebg-preview (42).png";
+import img4 from "../assets/image-removebg-preview (43).png";
+import img5 from "../assets/image-removebg-preview (44).png";
+import backgroundImage from "../assets/1000_F_333094597_8WdnUbpBaNg0HPLlXe9BFVhQzAnQPV6O.jpg"; // Your provided background image
 
 const CompaniesWeWorkWith: React.FC = () => {
-    const companies = [
-        { name: 'Bechtel', logo: c1 },
-        { name: 'Fluor Corporation', logo: c2 },
-        { name: 'Skanska', logo: c2 },
-        { name: 'Turner Construction', logo: c3 },
-        { name: 'Kiewit', logo: c2 },
-        { name: 'Jacobs Engineering', logo: c4 },
-        { name: 'Balfour Beatty', logo: c1 },
-        { name: 'Tetra Tech', logo: c2 },
-        { name: 'HDR', logo: c3 },
-        { name: 'Mortenson', logo: c4 },
-        { name: 'PCL Construction', logo: c1 },
-        { name: 'Clark Construction', logo: c2 },
-        { name: 'Whiting-Turner', logo: c3 },
-        { name: 'Black & Veatch', logo: c4 },
-        { name: 'Barton Malow', logo: c1 },
-        { name: 'Hensel Phelps', logo: c2 },
-    ];
+  const partners = [
+    { name: "MY Consulting", logo: img1 },
+    { name: "Innovate Corp", logo: img2 },
+    { name: "Future Solutions", logo: img3 },
+    { name: "Creative Minds", logo: img4 },
+    { name: "Visionary Group", logo: img5 },
+  ];
 
-    return (
-        <><div className="flex items-center justify-center my-10 bg-gray-100 p-4">
-            <hr className="flex-grow border-t border-gray-300" />
-          
-                            <h1 className="text-5xl font-bold text-center mb-6">Our Trusted <span className="text-blue-600">Partners.</span></h1>
+  return (
+    <section
+      className="relative bg-cover bg-center bg-no-repeat py-20"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+      }}
+    >
+      <div className="absolute inset-0 bg-gray-800/70"></div>
 
-            <hr className="flex-grow border-t border-gray-300" />
-        </div><div className="container mx-auto p-4 mt-19">
-                <div className="flex flex-wrap justify-center">
-                    {companies.map((company, index) => (
-                        <div key={company.name} className="flex justify-center items-center w-full md:w-1/3 lg:w-1/4 p-4">
-                            <div
-                                className={`bg-white rounded-lg shadow-xl p-4 transition-transform transform ${index % 2 === 0 ? 'animate-slide-left' : 'animate-slide-right'} w-full`}
-                            >
-                                <img src={company.logo} alt={company.name} className="h-32 w-auto mx-auto" />
-                            </div>
-                        </div>
-                    ))}
-                </div>
+      <div className="relative z-10 flex flex-col items-center px-6">
+        {/* Title */}
+        <h2 className="text-center text-2xl md:text-3xl font-semibold mb-2 text-white tracking-wide uppercase">
+          OUR PARTNERS
+        </h2>
 
-                <style>{`
-                @keyframes slide-left {
-                    0% {
-                        transform: translateX(-100%);
-                        opacity: 0;
-                    }
-                    100% {
-                        transform: translateX(0);
-                        opacity: 1;
-                    }
-                }
+        {/* Subtitle */}
+        <p className="text-center text-gray-300 mb-8 max-w-md">
+          We collaborate with industry leaders to deliver exceptional solutions and services.
+        </p>
 
-                @keyframes slide-right {
-                    0% {
-                        transform: translateX(100%);
-                        opacity: 0;
-                    }
-                    100% {
-                        transform: translateX(0);
-                        opacity: 1;
-                    }
-                }
-
-                .animate-slide-left {
-                    animation: slide-left 0.5s ease forwards;
-                }
-
-                .animate-slide-right {
-                    animation: slide-right 0.5s ease forwards;
-                }
-            `}</style>
-            </div></>
-    );
+        {/* Logo Row */}
+        <div className="bg-white py-6 px-5 md:px-10 rounded shadow-md flex flex-wrap justify-center gap-12 max-w-5xl w-full h-39">
+          {partners.map((partner, index) => (
+            <div
+              key={index}
+              className="flex-shrink-0 flex items-center justify-center"
+            >
+              <img
+                src={partner.logo}
+                alt={partner.name}
+                className="h-16 md:h-30 object-contain grayscale contrast-150"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default CompaniesWeWorkWith;

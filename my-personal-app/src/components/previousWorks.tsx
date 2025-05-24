@@ -1,75 +1,89 @@
-import React, { useState, useEffect } from 'react';
-import p2 from '../assets/p2.jpg';
-import p3 from '../assets/p3.jpg';      
-import p4 from '../assets/p4.jpg';
-import p5 from '../assets/p5.jpg'; 
-
-const previousWorks = [
-  {
-    title: 'Urban Park Design',
-    description: 'Designed a vibrant urban park that serves as a community hub, featuring walking trails and recreational areas.',
-    image: p5,
-  },
-  {
-    title: 'Commercial Office Building',
-    description: 'Managed the construction of a state-of-the-art office building, focusing on sustainability and energy efficiency.',
-    image: p3,
-  },
-  {
-    title: 'Residential Development',
-    description: 'Oversaw the planning and design of a modern residential community with eco-friendly features.',
-    image: p4,
-  },
-  {
-    title: 'Church Engineering Project',
-    description: 'Engineered a complex bridge design that enhances connectivity while ensuring safety and durability.',
-    image: p2,
-  },
-];
-
-const PreviousWorksSection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const nextWork = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % Math.ceil(previousWorks.length / 3));
-  };
-
-  useEffect(() => {
-    const interval = setInterval(nextWork, 3000); // Change slide every 3 seconds
-    return () => clearInterval(interval); // Clear interval on component unmount
-  }, []);
+import React from "react";
+import { FaArrowRight } from "react-icons/fa";
+import img1 from "../assets/consultancy.png";
+import img2 from "../assets/management.jpg";  
+import img3 from "../assets/supervision.jpg";
+import img4 from "../assets/1000_F_333094597_8WdnUbpBaNg0HPLlXe9BFVhQzAnQPV6O.jpg";
+const OurWorks: React.FC = () => {
+  const works = [
+    {
+      title: "Strategic Planning",
+      description:
+        "Crafting tailored strategies to navigate your business challenges effectively.",
+      tags: ["Consulting", "Strategy"],
+      image: img1, // replace with your actual path
+      featured: true,
+    },
+    {
+      title: "Market Analysis",
+      description: "In-depth market studies to identify opportunities and threats.",
+      tags: ["Research", "Analysis"],
+      image: img2, // replace with your actual path
+      featured: false,
+    },
+    {
+      title: "Brand Development",
+      description: "Creating impactful brand identities that resonate with your audience.",
+      tags: ["Branding", "Marketing"],
+      image: img3, 
+      featured: false,
+    },
+    {
+      title: "Digital Transformation",
+      description: "Guiding businesses through their digital evolution.",
+      tags: ["Technology", "Innovation"],
+      image: img4, 
+      featured: false,
+    },
+  ];
 
   return (
-    <>
-      <div className="flex items-center justify-center my-10 bg-blue-100 p-4">
-        <hr className="flex-grow border-t border-blue-300" />
-        <h2 className="mx-4 text-3xl font-bold text-center text-gray-800">
-          OUR PREVIOUS <span className="text-blue-600">WORKS.</span>
-        </h2>
-        <hr className="flex-grow border-t border-blue-300" />
+    <section className="px-6 md:px-20 py-16 bg-white text-black">
+      {/* Header */}
+      <div className="mb-10 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Works</h2>
+        <p className="text-gray-500 max-w-xl mx-auto">
+          Discover how MY Consulting transforms businesses through innovative strategies and solutions.
+        </p>
       </div>
-      <div className="max-w-7xl mx-auto p-6">
-        <div className="overflow-hidden">
+
+      {/* Works Section */}
+      <div className="flex items-center gap-4 overflow-x-auto no-scrollbar py-4">
+        {works.map((work, index) => (
           <div
-            className="flex transition-transform duration-500 ease-in-out"
-            style={{ transform: `translateX(-${currentIndex * (100 / 3)}%)` }}
+            key={index}
+            className={`flex-shrink-0 w-72 md:w-80 h-96 rounded-3xl overflow-hidden relative`}
           >
-            {previousWorks.map((work, index) => (
-              <div key={index} className="flex-none w-1/3 p-2">
-                <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
-                  <img src={work.image} alt={work.title} className="w-full h-48 object-cover" />
-                  <div className="p-4 text-center">
-                    <h3 className="text-xl font-semibold">{work.title}</h3>
-                    <p className="mt-2 text-gray-600">{work.description}</p>
-                  </div>
+            <img
+              src={work.image}
+              alt={work.title || "Work"}
+              className="object-cover w-full h-full"
+            />
+
+            {work.featured && (
+              <div className="absolute inset-0 bg-black/60 text-white flex flex-col justify-end p-4 rounded-3xl">
+                <h3 className="text-xl font-semibold">{work.title}</h3>
+                <p className="text-sm text-gray-300">{work.description}</p>
+                <div className="flex gap-2 mt-2">
+                  {work.tags.map((tag, i) => (
+                    <span
+                      key={i}
+                      className="bg-white/20 px-2 py-1 text-xs rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <div className="mt-4 flex justify-end">
+                  <FaArrowRight className="text-xl" />
                 </div>
               </div>
-            ))}
+            )}
           </div>
-        </div>
+        ))}
       </div>
-    </>
+    </section>
   );
 };
 
-export default PreviousWorksSection;
+export default OurWorks;
